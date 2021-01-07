@@ -1,0 +1,32 @@
+{
+  "name": "heroku-slug-promotion-through-circleci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-vishal-kumar/heroku-slug-promotion-through-circleci.git"
+  },
+  "keywords": [
+    "heroku",
+    "circleci",
+    "promote",
+    "development",
+    "slug",
+    "staging",
+    "sample config.yml"
+  ],
+  "author": "Vishal Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-vishal-kumar/heroku-slug-promotion-through-circleci/issues"
+  },
+  "homepage": "https://github.com/the-vishal-kumar/heroku-slug-promotion-through-circleci#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

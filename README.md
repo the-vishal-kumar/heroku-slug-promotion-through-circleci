@@ -1,3 +1,5 @@
+> **Archived.** Written in 2021 and kept as a record of earlier work. It is no longer maintained and its dependencies are outdated.
+
 # heroku-slug-promotion-through-circleci
 
 ## How to get HEROKU_API_KEY

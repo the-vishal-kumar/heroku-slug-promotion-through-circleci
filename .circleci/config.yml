@@ -16,4 +16,9 @@ jobs:
           command: git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_DEV_APP_NAME.git +HEAD:refs/heads/master
       - run:
           name: Promote Development Slug to Staging
-          command: curl -n -X POST -H "Content-Type:application/json" -H "Accept:application/vnd.heroku+json; version=3" -H "Authorization:Bearer $HEROKU_API_KEY" -d '{"pipeline":{"id":$HEROKU_PIPELINE_UUID},"source":{"app":{"id":$HEROKU_SOURCE_UUID}},"targets":[{"app":{"id":$HEROKU_TARGET1_UUID}}]}' https://api.heroku.com/pipeline-promotions
+          command: |
+            curl --fail --silent --show-error -X POST https://api.heroku.com/pipeline-promotions \
+              -H "Content-Type: application/json" \
+              -H "Accept: application/vnd.heroku+json; version=3" \
+              -H "Authorization: Bearer $HEROKU_API_KEY" \
+              -d "{\"pipeline\":{\"id\":\"$HEROKU_PIPELINE_UUID\"},\"source\":{\"app\":{\"id\":\"$HEROKU_SOURCE_UUID\"}},\"targets\":[{\"app\":{\"id\":\"$HEROKU_TARGET1_UUID\"}}]}"
